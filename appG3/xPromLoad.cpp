@@ -18,6 +18,7 @@
 #include <iomanip>
 #include <iostream>
 #include <string.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 #include "PgpCardG3Prom.h"
