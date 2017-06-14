@@ -30,6 +30,7 @@ all:
 
 clean:
 	rm -f xStatus
+	rm -f xDebug
 	rm -f xReset
 	rm -f xLoop
 	rm -f xWrite
@@ -39,3 +40,16 @@ clean:
 	rm -f PgpCardG3Prom.o
 	rm -f xPromLoad
 	rm -f xPromVerify
+	rm -f evrRunDelay
+	rm -f evrRunCode
+	rm -f evrReset
+	rm -f evrLaneMode
+	rm -f evrLaneEnable
+	rm -f evrHdrChk
+	rm -f evrEnable
+	rm -f evrAcceptCode
+	rm -f evrFiducial
+	rm -f evrDisable
+	rm -f evrConfig
+	rm -f evrClearFrameCount
+	rm -f evrAcceptDelay
