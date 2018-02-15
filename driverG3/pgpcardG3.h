@@ -21,8 +21,11 @@
 #include <linux/types.h>
 #include <linux/spinlock.h>
 #include <asm/spinlock.h>
+#include <linux/version.h>
 
-#define RHEL7 1
+#if LINUX_VERSION_CODE > KERNEL_VERSION(2,6,36)
+#define UNLOCKED 1
+#endif
 
 #define NUMBER_OF_LANES 8
 #define NUMBER_OF_VC 4
@@ -303,9 +306,9 @@ static struct pci_driver PgpCardG3Driver = {
 struct file_operations PgpCardG3_Intf = {
    read:    PgpCardG3_Read,
    write:   PgpCardG3_Write,
-#ifndef RHEL7
+#ifndef UNLOCKED
    ioctl:   PgpCardG3_Ioctl,
-#endif RHEL7
+#endif
    open:    PgpCardG3_Open,
    release: PgpCardG3_Release,
    poll:    PgpCardG3_Poll,

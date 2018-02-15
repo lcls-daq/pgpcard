@@ -24,7 +24,12 @@
 #include <linux/types.h>
 #include <linux/spinlock.h>
 #include <asm/spinlock.h>
+#include <linux/version.h>
 #include "../include/PgpCardStatus.h"
+
+#if LINUX_VERSION_CODE > KERNEL_VERSION(2,6,36)
+#define UNLOCKED 1
+#endif
 
 // DMA Buffer Size, Bytes
 #define DEF_RX_BUF_SIZE 2097152
@@ -265,7 +270,9 @@ static struct pci_driver PgpCardDriver = {
 struct file_operations PgpCard_Intf = {
    read:    PgpCard_Read,
    write:   PgpCard_Write,
+#ifndef UNLOCKED
    ioctl:   PgpCard_Ioctl,
+#endif
    open:    PgpCard_Open,
    release: PgpCard_Release,
    poll:    PgpCard_Poll,
