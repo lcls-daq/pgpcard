@@ -131,6 +131,6 @@ typedef struct {
    __u32 spare5[245]; // 0x82C - 0xBFC
 
    __u32 promRegs[3]; // Prom registers
-} PgpCardG2Reg;
+} PgpCardG2Regs;
 
 #endif
