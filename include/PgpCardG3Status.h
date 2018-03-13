@@ -97,7 +97,7 @@ typedef struct {
 
 } PgpCardG3Status;
 
-#define NUMBER_OF_LANES 8
+#define G3_NUMBER_OF_LANES 8
 typedef struct {
   __u32 Version;       // Software_Addr = 0x000,        Firmware_Addr(13 downto 2) = 0x000
   __u32 SerialNumber[2];// Software_Addr = 0x004,        Firmware_Addr(13 downto 2) = 0x001
@@ -119,24 +119,24 @@ typedef struct {
  __u32 pgpCardStat[2];// Software_Addr = 0x084:0x080,  Firmware_Addr(13 downto 2) = 0x021:0x020
   __u32 pgpSpare0[54]; // Software_Addr = 0x15C:0x088,  Firmware_Addr(13 downto 2) = 0x057:0x022
 
-  __u32 fiducials[NUMBER_OF_LANES]; // Software_Addr = 0x17C:0x160,  Firmware_Addr(13 downto 2) = 0x05F:0x058
-  __u32 runCode[NUMBER_OF_LANES];   // Software_Addr = 0x19C:0x180,  Firmware_Addr(13 downto 2) = 0x067:0x060
-  __u32 acceptCode[NUMBER_OF_LANES];// Software_Addr = 0x1BC:0x1A0,  Firmware_Addr(13 downto 2) = 0x06F:0x068
+  __u32 fiducials[G3_NUMBER_OF_LANES]; // Software_Addr = 0x17C:0x160,  Firmware_Addr(13 downto 2) = 0x05F:0x058
+  __u32 runCode[G3_NUMBER_OF_LANES];   // Software_Addr = 0x19C:0x180,  Firmware_Addr(13 downto 2) = 0x067:0x060
+  __u32 acceptCode[G3_NUMBER_OF_LANES];// Software_Addr = 0x1BC:0x1A0,  Firmware_Addr(13 downto 2) = 0x06F:0x068
 
-  __u32 runDelay[NUMBER_OF_LANES];   // Software_Addr = 0x1DC:0x1C0,  Firmware_Addr(13 downto 2) = 0x077:0x070
-  __u32 acceptDelay[NUMBER_OF_LANES];// Software_Addr = 0x1FC:0x1E0,  Firmware_Addr(13 downto 2) = 0x07F:0x078
+  __u32 runDelay[G3_NUMBER_OF_LANES];   // Software_Addr = 0x1DC:0x1C0,  Firmware_Addr(13 downto 2) = 0x077:0x070
+  __u32 acceptDelay[G3_NUMBER_OF_LANES];// Software_Addr = 0x1FC:0x1E0,  Firmware_Addr(13 downto 2) = 0x07F:0x078
 
-  __u32 pgpLaneStat[NUMBER_OF_LANES];// Software_Addr = 0x21C:0x200,  Firmware_Addr(13 downto 2) = 0x087:0x080
-  __u32 evrRunCodeCount[NUMBER_OF_LANES]; // Software_Addr = 0x23C:0x220, Firmware_Addr ????
-  __u32 LutDropCnt[NUMBER_OF_LANES]; // Software_addr = ox25C:0x240, Firmware_addr ????
-  __u32 AcceptCnt[NUMBER_OF_LANES]; // Software addr = 0x27C:0x260, Firmware_addr ????
+  __u32 pgpLaneStat[G3_NUMBER_OF_LANES];// Software_Addr = 0x21C:0x200,  Firmware_Addr(13 downto 2) = 0x087:0x080
+  __u32 evrRunCodeCount[G3_NUMBER_OF_LANES]; // Software_Addr = 0x23C:0x220, Firmware_Addr ????
+  __u32 LutDropCnt[G3_NUMBER_OF_LANES]; // Software_addr = ox25C:0x240, Firmware_addr ????
+  __u32 AcceptCnt[G3_NUMBER_OF_LANES]; // Software addr = 0x27C:0x260, Firmware_addr ????
   __u32 pgpSpare1[32]; // Software_Addr = 0x2FC:0x280,  Firmware_Addr(13 downto 2) = 0x0BF:0x088
   __u32 BuildStamp[64];// Software_Addr = 0x3FC:0x300,  Firmware_Addr(13 downto 2) = 0x0FF:0x0C0
 
   //PciRxDesc.vhd
-  __u32 rxFree[NUMBER_OF_LANES];     // Software_Addr = 0x41C:0x400,  Firmware_Addr(13 downto 2) = 0x107:0x100
+  __u32 rxFree[G3_NUMBER_OF_LANES];     // Software_Addr = 0x41C:0x400,  Firmware_Addr(13 downto 2) = 0x107:0x100
   __u32 rxSpare0[24];  // Software_Addr = 0x47C:0x420,  Firmware_Addr(13 downto 2) = 0x11F:0x108
-  __u32 rxFreeStat[NUMBER_OF_LANES]; // Software_Addr = 0x49C:0x480,  Firmware_Addr(13 downto 2) = 0x127:0x120
+  __u32 rxFreeStat[G3_NUMBER_OF_LANES]; // Software_Addr = 0x49C:0x480,  Firmware_Addr(13 downto 2) = 0x127:0x120
   __u32 rxSpare1[24];  // Software_Addr = 0x4FC:0x4A0,  Firmware_Addr(13 downto 2) = 0x13F:0x128
   __u32 rxMaxFrame;    // Software_Addr = 0x500,        Firmware_Addr(13 downto 2) = 0x140
   __u32 rxCount;       // Software_Addr = 0x504,        Firmware_Addr(13 downto 2) = 0x141

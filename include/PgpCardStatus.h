@@ -78,6 +78,7 @@ typedef struct {
 
 } PgpCardStatus;
 
+#define G2_NUMBER_OF_LANES 4
 typedef struct {
    __u32 version;     // 0x000
    __u32 scratch;     // 0x004
